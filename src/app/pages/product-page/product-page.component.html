@@ -1,0 +1,8 @@
+<div>
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <app-product-list *ngIf="!showSpinner && productList.length>0" [PRODUCTS] = "productList" (refreshProductList) = refreshProductList($event)></app-product-list>
+  <div *ngIf="!showSpinner && productList.length == 0" class="text-center mt-5">
+    <h3> Products not found! </h3>
+    <button (click) = "createProductPage()" class="btn btn-primary btn-small"> Create a product </button>
+  </div>
+</div>

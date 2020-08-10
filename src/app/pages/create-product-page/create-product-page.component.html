@@ -1,0 +1,55 @@
+<div>
+  <h3 class="text-center">Create product</h3>
+  <hr>
+  <form [formGroup]="createProductForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Product title </label>
+          <input type="text" class="form-control" formControlName="title">
+          <span *ngIf="createProductForm.get('title').hasError('required') && createProductForm.get('title').touched"
+            class="help-block"> Product title is required. </span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="Product price"> Product price </label>
+          <input type="number" formControlName="price" class="form-control">
+          <span *ngIf="createProductForm.get('price').hasError('required') && createProductForm.get('price').touched"
+            class="help-block"> Product price is required. </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="Product description"> Product description </label>
+          <textarea rows="4" formControlName="description" class="form-control"></textarea>
+          <span
+            *ngIf="createProductForm.get('description').hasError('required') && createProductForm.get('description').touched"
+            class="help-block"> Product description is required. </span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="Product image"> Product image </label>
+          <input type="file" (change)="onProductImageChoose($event)" class="form-control">
+        </div>
+        <div *ngIf="pickedImage">
+          <img class="img-fluid" [src]="pickedImage" alt="chosen product image">
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <button (click)="onCreateProduct()" class="btn btn-primary btn-small" type="button"
+          [disabled]="createProductForm.invalid || isProductCreate	 ">
+          <span *ngIf="isProductCreate" class="spinner-border spinner-border-sm" role="status"
+            aria-hidden="true"></span>
+          Cerate Product
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<app-spinner *ngIf="isLoadProduct"></app-spinner>
+
+<div *ngIf="!isLoadProduct" class="card mt-4">
+  <div class="row">
+    <div class="col-7 text-center">
+      <img class="img-fluid" [src]="product?.productImage  || 'https://www.warnersstellian.com/Content/images/product_image_not_available.png'" [alt]="product?.title">
+    </div>
+    <div class="col-5 mt-3">
+      <h2 class="text-center"> {{ product?.title }} </h2>
+      <hr>
+      <p> {{ product?.description }} </p>
+      <div class="text-center">
+        <button [routerLink] = "['/cart']" class="btn btn-primary"> Buy now for {{ product?.price| currency:'₹' }} </button>
+      </div>
+    </div>
+  </div>
+</div>
