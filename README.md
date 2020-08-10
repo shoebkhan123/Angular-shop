@@ -7,7 +7,7 @@
     4. After finish npm install runn the command ng serve to run the project.
 
 ## prerequisite to run this project:
-     1. git, Node (Download node https://nodejs.org/en/download/), Angular cli, ( After intastalling node run the command in your terminal/cmd npm install -g  @angular/cli)
+    git, Node (Download node https://nodejs.org/en/download/), Angular cli, ( After intastalling node run the command in your terminal/cmd npm install -g  @angular/cli)
         and Internet
 
 ## Note:
